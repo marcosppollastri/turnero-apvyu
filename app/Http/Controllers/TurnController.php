@@ -14,7 +14,7 @@ class TurnController extends Controller
      */
     public function index()
     {
-        //
+       return view('cruds/turns/index');
     }
 
     /**
@@ -24,7 +24,7 @@ class TurnController extends Controller
      */
     public function create()
     {
-        //
+        return view('cruds/turns/create');
     }
 
     /**
