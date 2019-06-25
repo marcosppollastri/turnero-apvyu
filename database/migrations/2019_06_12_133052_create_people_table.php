@@ -18,6 +18,7 @@ class CreatePeopleTable extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('dni');
+            $table->string('email');
             $table->date('birth_date');
             $table->timestamps();
         });
