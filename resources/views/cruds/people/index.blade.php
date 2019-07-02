@@ -13,11 +13,11 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($turns as $turn)
+        @foreach($people as $pearson)
             <tr>
-                <td scope="row">1</td>
-            <td>{{$turn->$pearson->$name}}</td>
-                <td>Inscripción</td>
+            <td scope="row">{{$pearson->id}}</td>
+            <td>{{$pearson->name}}</td>
+                <td>{{$turn->pearson->surname}}</td>
                 <td><a name="" id="" class="btn btn-success" href="#" role="button">Ver</a></td>
                 <td><a name="" id="" class="btn btn-primary" href="#" role="button">Archivar</a></td>
                 <td><a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a></td>
@@ -28,7 +28,7 @@
 <br>
 <br>
 <div class="float-right">
-        <a name="" id="" class="btn btn-success" href="/turns/create" role="button"><i class="fas fa-plus    "></i> Nuevo Turno</a>
+        <a name="" id="" class="btn btn-success" href="/people/create" role="button"><i class="fas fa-plus    "></i> Nueva Persona </a>
 </div>
 
 @endsection

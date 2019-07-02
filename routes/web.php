@@ -18,5 +18,6 @@ Route::get('/', function () {
 Route::resources([
     '/queues' => 'QueueController',
     '/turns' => 'TurnController',
+    '/people' => 'PearsonController'
 ]);
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Turn;
+use App\Pearson;
 use Illuminate\Http\Request;
 
 class TurnController extends Controller
@@ -14,7 +15,12 @@ class TurnController extends Controller
      */
     public function index()
     {
-       return view('cruds/turns/index');
+        $turns = Turn::all();
+        $people = Pearson::all();
+        //dd($turns);
+        $view = view('cruds/turns/index');
+        $view->with('people', $people);
+       return $view->with('turns', $turns);
     }
 
     /**
@@ -35,7 +41,16 @@ class TurnController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pearsonId = (int)$request->pearson;
+        //$pearson = new Pearson::find($pearsonId);
+        $turn = new Turn;
+        $turn->order = -1;
+       // $turn->pearson = new Pearson::find();
+        $turn->reason = $request->reason;
+        $turn->save();
+
+        return redirect('/turns');
+
     }
 
     /**
@@ -46,7 +61,7 @@ class TurnController extends Controller
      */
     public function show(Turn $turn)
     {
-        //
+        return;
     }
 
     /**
