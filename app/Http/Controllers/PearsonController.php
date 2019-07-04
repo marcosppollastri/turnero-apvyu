@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Pearson;
-use Carbon;
+use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 
@@ -38,14 +38,15 @@ class PearsonController extends Controller
         $pearson->name = $request->name;
         $pearson->surname = $request->surname;
         $pearson->dni = $request->dni;
-        // $pearson->birth_date = null;
-        $pearson->email = "unmail@dominio.com.ar";
+        $pearson->birth_date = Carbon::parse($request->birth_date);
+        $pearson->email = $request->email;
+        
+        
+        $pearson->save();
         dd($pearson);
-        // $pearson->save();
-
         
 
-        // return redirect('/people');
+       return redirect('/people');
 
     }
 }

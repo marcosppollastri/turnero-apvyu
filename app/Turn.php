@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Turn extends Model
 {
     public function pearson(){
-        return $this->hasOne('App\Pearson');
+        return $this->belongsTo('App\Pearson');
         
     }
     public function user(){

@@ -5,7 +5,8 @@
                 <div class="col-sm-12 col-lg-4"></div>
                 <div class="col-sm-12 col-lg-4">
                         <div class="card">
-                                <form action="/queues" method="post">          
+                                <form action="/queues" method="post">    
+                                    {{ csrf_field() }}      
                                     <div class="card-body">
                                         <h4 class="card-title">Crear nueva cola</h4>
                                         <p class="card-text"></p>

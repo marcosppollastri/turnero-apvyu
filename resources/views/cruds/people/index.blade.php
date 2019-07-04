@@ -16,8 +16,8 @@
         @foreach($people as $pearson)
             <tr>
             <td scope="row">{{$pearson->id}}</td>
-            <td>{{$pearson->name}}</td>
-                <td>{{$turn->pearson->surname}}</td>
+            <td>{{$pearson->name}} {{$pearson->surname}}</td>
+                <td>{{$pearson->dni}}</td>
                 <td><a name="" id="" class="btn btn-success" href="#" role="button">Ver</a></td>
                 <td><a name="" id="" class="btn btn-primary" href="#" role="button">Archivar</a></td>
                 <td><a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a></td>

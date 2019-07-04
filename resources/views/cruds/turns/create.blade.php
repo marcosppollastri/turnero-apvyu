@@ -1,6 +1,7 @@
 @extends('layouts.layout_general')
 @section('content')
     <form action="/turns" method="POST">
+      {{ csrf_field() }}
         <div class="form-group">
           <label for="reason">Razon</label>
           <input type="text" name="reason" id="" class="form-control" placeholder="Razon" aria-describedby="helpId">

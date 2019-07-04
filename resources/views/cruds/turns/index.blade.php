@@ -16,7 +16,7 @@
         @foreach($turns as $turn)
             <tr>
                 <td scope="row">1</td>
-            <td>{{$turn->$pearson->$name}}</td>
+                <td>{{$turn->pearson->name}}</td>
                 <td>Inscripción</td>
                 <td><a name="" id="" class="btn btn-success" href="#" role="button">Ver</a></td>
                 <td><a name="" id="" class="btn btn-primary" href="#" role="button">Archivar</a></td>

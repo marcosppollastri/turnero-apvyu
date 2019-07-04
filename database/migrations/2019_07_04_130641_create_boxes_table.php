@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTurnsTable extends Migration
+class CreateBoxesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,13 @@ class CreateTurnsTable extends Migration
      */
     public function up()
     {
-        Schema::create('turns', function (Blueprint $table) {
+        Schema::create('boxes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('order');
-            $table->String('reason');
-            $table->integer('user_id')->unsigned();
-            $table->integer('people_id')->unsigned();
-
-           // $table->integer('queue_id');
+            $table->integer('number');
+            $table->integer('users_id')->unsigned();
+            $table->boolean('available');
             $table->timestamps();
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('people_id')->references('id')->on('people')->onDelete('cascade');
         });
     }
 
@@ -34,6 +30,6 @@ class CreateTurnsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('turns');
+        Schema::dropIfExists('boxes');
     }
 }
